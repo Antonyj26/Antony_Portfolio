@@ -82,7 +82,7 @@ const myEducation: EducationCardProps[] = [
       "Habilidades em Git/GitHub e deploy de aplicações.",
     ],
     certificateLink:
-      "https://app.rocketseat.com.br/certificates/c4d9822a-0a02-4161-865d-5efb81a9764c",
+      "https://app.rocketseat.com.br/certificates/c4d9822a-0a02-4191-865d-5efb81a9764c",
   },
 ];
 

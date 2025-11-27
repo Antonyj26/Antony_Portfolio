@@ -1,16 +1,10 @@
-// src/pages/Projects.tsx
-
 import React from "react";
 
-// Importação das imagens dos projetos (certifique-se de que os arquivos estão em src/assets)
 import HelpdeskImage from "../assets/helpdesk.png";
 import AdivinheImage from "../assets/advinhe.png";
 import SorteadorImage from "../assets/sorteador.png";
 import QuizImage from "../assets/quiz.png";
 
-// ------------------------------------------
-// Tipagem de Dados
-// ------------------------------------------
 interface ProjectData {
   title: string;
   description: string;
@@ -18,12 +12,9 @@ interface ProjectData {
   liveLink?: string;
   githubLink?: string;
   githubBackendLink?: string;
-  image?: string; // Caminho da imagem importada
+  image?: string;
 }
 
-// ------------------------------------------
-// Componente: ProjectCard
-// ------------------------------------------
 const ProjectCard: React.FC<ProjectData> = ({
   title,
   description,
@@ -34,64 +25,51 @@ const ProjectCard: React.FC<ProjectData> = ({
   image,
 }) => (
   <div className="bg-gray-800 border border-gray-700 rounded-xl shadow-2xl hover:shadow-cyan-500/30 transition-shadow duration-500 overflow-hidden flex flex-col">
-    {/* HEADER VISUAL - CONDICIONAL */}{" "}
     <div className="h-40 bg-gray-700 flex items-center justify-center text-gray-400">
-      {" "}
-      {
-        // 1. Se houver uma imagem definida, renderiza a imagem
-        image ? (
-          <img
-            src={image}
-            alt={`Mockup do projeto ${title}`}
-            className="w-full h-full object-cover"
-          />
-        ) : // 2. Se não houver imagem, mas houver LiveLink (placeholder ou projeto em progresso)
-        liveLink ? (
-          <div className="text-gray-400 text-lg">[Mockup em breve]</div>
-        ) : (
-          // 3. Se não houver LiveLink (Foco em Back-end/API), renderiza o ícone de Código
-          <div className="flex flex-col items-center text-cyan-400">
-            {" "}
-            <svg
-              className="w-12 h-12 mb-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {" "}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-              ></path>{" "}
-            </svg>{" "}
-            <span className="text-base font-medium">Foco em Back-end</span>{" "}
-          </div>
-        )
-      }{" "}
-    </div>{" "}
+      {image ? (
+        <img
+          src={image}
+          alt={`Mockup do projeto ${title}`}
+          className="w-full h-full object-cover"
+        />
+      ) : liveLink ? (
+        <div className="text-gray-400 text-lg">[Mockup em breve]</div>
+      ) : (
+        <div className="flex flex-col items-center text-cyan-400">
+          <svg
+            className="w-12 h-12 mb-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+            ></path>
+          </svg>
+          <span className="text-base font-medium">Foco em Back-end</span>
+        </div>
+      )}
+    </div>
     <div className="p-6 flex-grow flex flex-col justify-between">
-      {" "}
       <div>
-        {" "}
         <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-        <p className="text-gray-400 mb-4">{description}</p>{" "}
-      </div>{" "}
+        <p className="text-gray-400 mb-4">{description}</p>
+      </div>
       <div className="flex flex-wrap gap-2 mb-4 mt-3">
-        {" "}
         {technologies.map((tech) => (
           <span
             key={tech.name}
             className={`text-xs font-medium px-3 py-1 rounded-full ${tech.color} text-white`}
           >
-            {tech.name}{" "}
+            {tech.name}
           </span>
-        ))}{" "}
-      </div>{" "}
+        ))}
+      </div>
       <div className="flex gap-4 pt-4 border-t border-gray-700">
-        {" "}
         {liveLink && (
           <a
             href={liveLink}
@@ -99,9 +77,9 @@ const ProjectCard: React.FC<ProjectData> = ({
             rel="noopener noreferrer"
             className="text-white bg-cyan-600 hover:bg-cyan-700 font-medium py-2 px-4 rounded-lg transition-colors text-sm"
           >
-            Live Demo{" "}
+            Live Demo
           </a>
-        )}{" "}
+        )}
         {githubLink && (
           <a
             href={githubLink}
@@ -109,9 +87,9 @@ const ProjectCard: React.FC<ProjectData> = ({
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white border border-gray-600 font-medium py-2 px-4 rounded-lg transition-colors text-sm"
           >
-            {githubBackendLink ? "GitHub Front" : "GitHub"}{" "}
+            {githubBackendLink ? "GitHub Front" : "GitHub"}
           </a>
-        )}{" "}
+        )}
         {githubBackendLink && (
           <a
             href={githubBackendLink}
@@ -119,17 +97,14 @@ const ProjectCard: React.FC<ProjectData> = ({
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white border border-gray-600 font-medium py-2 px-4 rounded-lg transition-colors text-sm"
           >
-            GitHub Back{" "}
+            GitHub Back
           </a>
-        )}{" "}
-      </div>{" "}
-    </div>{" "}
+        )}
+      </div>
+    </div>
   </div>
 );
 
-// ------------------------------------------
-// Lista de Projetos (Dados Reais do Usuário)
-// ------------------------------------------
 const projectList: ProjectData[] = [
   {
     title: "Helpdesk – Full-Stack System",
@@ -214,28 +189,23 @@ const projectList: ProjectData[] = [
   },
 ];
 
-// ------------------------------------------
-// Página: Projects (Portfólio)
-// ------------------------------------------
 export const Projects: React.FC = () => {
   return (
     <section id="portfolio" className="py-16">
-      {/* TÍTULO: COM MB-6 */}{" "}
       <h1 className="text-4xl font-bold text-white border-b border-gray-700 pb-4 mb-6">
-        Projetos em Destaque{" "}
+        Projetos em Destaque
       </h1>
-      {/* DESCRIÇÃO: COM MB-10 */}{" "}
+
       <p className="text-gray-400 text-lg mb-10">
         Aqui estão alguns dos meus projetos que demonstram minha capacidade de
-        construir desde o zero até a produção.{" "}
+        construir desde o zero até a produção.
       </p>
-      {/* Grid de Projetos */}{" "}
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {" "}
         {projectList.map((project, index) => (
           <ProjectCard key={index} {...project} />
-        ))}{" "}
-      </div>{" "}
+        ))}
+      </div>
     </section>
   );
 };
