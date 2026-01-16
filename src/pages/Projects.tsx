@@ -4,6 +4,7 @@ import HelpdeskImage from "../assets/helpdesk.png";
 import AdivinheImage from "../assets/advinhe.png";
 import SorteadorImage from "../assets/sorteador.png";
 import QuizImage from "../assets/quiz.png";
+import UnhasImage from "../assets/UnhasVF.png";
 
 interface ProjectData {
   title: string;
@@ -106,6 +107,22 @@ const ProjectCard: React.FC<ProjectData> = ({
 );
 
 const projectList: ProjectData[] = [
+  {
+    title: "UnhasVF – Full-Stack System",
+    description:
+      "Sistema de gestão para manicures e pedicures, focado em agilidade no agendamento e controle de clientes. O projeto visa facilitar o dia a dia do salão da minha esposa com uma interface amigável e responsiva.",
+    technologies: [
+      { name: "React", color: "bg-blue-600" },
+      { name: "Node.js/Express", color: "bg-green-600" },
+      { name: "PostgreSQL/Prisma", color: "bg-indigo-600" },
+      { name: "Docker", color: "bg-teal-600" },
+      { name: "TypeScript", color: "bg-blue-500" },
+    ],
+    liveLink: "https://unhas-vf.vercel.app",
+    githubLink: "https://github.com/Antonyj26/unhasVF",
+    githubBackendLink: "https://github.com/Antonyj26/unhasVF-api",
+    image: UnhasImage,
+  },
   {
     title: "Helpdesk – Full-Stack System",
     description:

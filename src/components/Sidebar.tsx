@@ -72,26 +72,23 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </p>
         </div>
 
-        {/* 2. Links de Navegação */}
         <nav>
           <ul>
             {navItems.map((item) => {
               return (
                 <li key={item.id} className="mb-4">
                   {item.isMainSection ? (
-                    // ⚠️ CORREÇÃO APLICADA AQUI: Mudando <span> para <a>
                     <a
-                      href={item.href} // Deve ser "#home" (corrigido no types/navigation.ts)
+                      href={item.href}
                       onClick={toggleSidebar}
                       className={`uppercase text-xs tracking-widest ${highlightColor} font-semibold block mb-2 mt-4 hover:text-white transition duration-150`}
                     >
                       {item.name}
                     </a>
                   ) : (
-                    // Links de navegação normais
                     <a
                       href={item.href}
-                      onClick={toggleSidebar} // Fecha a sidebar ao navegar (em mobile)
+                      onClick={toggleSidebar}
                       className={`
                         block text-base font-medium transition-colors duration-150 
                         text-gray-400 hover:text-white 
@@ -107,7 +104,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </nav>
       </aside>
 
-      {/* Camada de sobreposição escura para o modo móvel (Mantida) */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-20 md:hidden"
