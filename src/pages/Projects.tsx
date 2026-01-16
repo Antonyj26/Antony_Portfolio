@@ -4,7 +4,7 @@ import HelpdeskImage from "../assets/helpdesk.png";
 import AdivinheImage from "../assets/advinhe.png";
 import SorteadorImage from "../assets/sorteador.png";
 import QuizImage from "../assets/quiz.png";
-import UnhasImage from "../assets/UnhasVF.png";
+import UnhasImage from "../assets/unhasVF.png";
 
 interface ProjectData {
   title: string;
@@ -55,7 +55,7 @@ const ProjectCard: React.FC<ProjectData> = ({
         </div>
       )}
     </div>
-    <div className="p-6 flex-grow flex flex-col justify-between">
+    <div className="p-6 flex flex-col justify-between">
       <div>
         <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
         <p className="text-gray-400 mb-4">{description}</p>
