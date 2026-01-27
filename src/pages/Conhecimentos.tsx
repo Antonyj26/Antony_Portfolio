@@ -8,6 +8,7 @@ import GithubIcon from "../assets/github.svg";
 import HtmlIcon from "../assets/html.svg";
 import InsomniaIcon from "../assets/insomnia.svg";
 import JavaIcon from "../assets/java.svg";
+import SpringIcon from "../assets/spring-svgrepo-com.svg";
 import JavascriptIcon from "../assets/javascript.svg";
 import JestIcon from "../assets/jest.svg";
 import NodeIcon from "../assets/node.svg";
@@ -20,6 +21,7 @@ import MysqlIcon from "../assets/mysql.svg";
 const stacks = [
   { name: "TypeScript", icon: TypescriptIcon },
   { name: "Java", icon: JavaIcon },
+  { name: "Spring", icon: SpringIcon },
   { name: "React", icon: ReactIcon },
   { name: "Node.js", icon: NodeIcon },
   { name: "Express", icon: ExpressIcon },
